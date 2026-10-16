@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "rtl-conformity",
+  "owner": { "name": "Daniel Rosehill", "url": "https://github.com/danielrosehill" },
+  "plugins": [
+    {
+      "name": "rtl-conformity",
+      "source": "./",
+      "description": "Right-to-left conformity skills for email, Google Workspace, calendar and generated files.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+<!--
+  RTL email body template. Replace the placeholders, keep the structure.
+    {{LANG}}       he | ar | fa | ur
+    {{FONT}}       Hebrew: Arial,'Noto Sans Hebrew',sans-serif
+                   Arabic / Farsi / Urdu: Tahoma,Arial,sans-serif
+    {{BODY}}       <p dir="rtl">…</p> blocks: dir on EVERY block,
+                   multi-part numbers as <span dir="ltr">…</span>
+    {{SIGNATURE}}  Latin-script sign-off (delete the second div if the signature is in Hebrew
+                   and put it inside the first)
+  Send as HTML. Pass the markup itself, never an entity-escaped copy.
+-->
+<div dir="rtl" lang="{{LANG}}" style="direction:rtl;text-align:right;color:#1a1a2e;font-size:15px;line-height:1.7;font-family:{{FONT}};">
+  {{BODY}}
+</div>
+<div dir="ltr" style="direction:ltr;text-align:left;margin-top:24px;color:#1a1a2e;font-size:15px;line-height:1.6;font-family:Arial,sans-serif;">
+  {{SIGNATURE}}
+</div>
+
+<!--
+  Formal letter to an institution: open the body with these, in this order.
+  <p dir="rtl">לכבוד<br>{{RECIPIENT_BODY}}</p>
+  <p dir="rtl"><strong>הנדון: {{SUBJECT}}</strong></p>
+  <table dir="rtl" style="border-collapse:collapse;margin:8px 0 16px;">
+    <tr><td style="padding:2px 0 2px 12px;color:#5f5f5f;">מספר תעודת זהות</td><td dir="ltr" align="right">{{ID}}</td></tr>
+    <tr><td style="padding:2px 0 2px 12px;color:#5f5f5f;">מספר חשבון</td><td dir="ltr" align="right">{{ACCOUNT}}</td></tr>
+  </table>
+  … body …
+  <p dir="rtl">בכבוד רב,<br>{{SENDER_NAME}}</p>
+-->
